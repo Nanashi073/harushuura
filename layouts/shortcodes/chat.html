@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{{ if eq (.Get "position") "left" }}</span></p>
+<p class="p1"><span class="s1">&lt;div class="chat --other"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="chat__inner"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="chat__meta"&gt;{{ .Get "name" }}&amp;nbsp;&amp;nbsp;&amp;nbsp;{{ .Get "timestamp" }}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="chat__text"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{{ .Inner }}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">{{ else if eq (.Get "position") "right" }}</span></p>
+<p class="p1"><span class="s1">&lt;div class="chat --self"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="chat__inner"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="chat__meta" style="text-align: right;"&gt;{{ .Get "timestamp" }}&amp;nbsp;&amp;nbsp;&amp;nbsp;{{ .Get "name" }}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="chat__text"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{{ .Inner }}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">{{ end }}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.chat {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>padding: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 添加相对定位，以便定位尖角箭头 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transition: transform 0.2s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 添加过渡效果，使放大平滑 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>max-width: 80%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>min-width: 15%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.chat:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transform: scale(1.05);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.chat.--self {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-align: left;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: #ecf5ff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: #000000;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: fit-content;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-left: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* 尖角箭头 */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.chat.--self::before {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>content: "";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>right: -18px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 调整箭头位置 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>bottom: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transform: translateY(-50%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-width: 15px 0 0 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-style: solid;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-color: transparent transparent transparent #ecf5ff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 箭头颜色与对话框背景颜色一致 */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* 左边对话框样式 */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.chat.--other {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>text-align: left;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: #ffecec;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: #333;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-radius: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width: fit-content;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* 左边对话框的尖角箭头 */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.chat.--other::before {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>content: "";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>left: -18px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>bottom: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>transform: translateY(-50%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-width: 15px 20px 0 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-style: solid;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-color: transparent #ffecec transparent transparent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* 消息元数据样式（名称和时间戳） */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.chat__meta {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-weight: bold;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 0.67em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: #707070;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-bottom: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* 消息文本样式 */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.chat__text {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>font-size: 0.9em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>margin-left: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>word-break: break-all;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>[data-scheme="dark"] {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chat.--self {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #fefefe;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #253958;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chat.--self::before {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-color: transparent transparent transparent #253958;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chat.--other {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #fefefe;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #1a1a1a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chat.--other::before {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-color: transparent #1a1a1a transparent transparent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chat__meta {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #b1b1b1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+</body>
+</html>

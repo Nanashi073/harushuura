@@ -1,0 +1,53 @@
+baseURL = 'https://example.org/'
+DefaultContentLanguage = "zh"
+languageCode = 'zh-cn'
+title = '春天与阿修罗'
+copyright = "食宇宙尘埃·或吐纳着空气和盐水"
+theme = 'diary'
+hasCJKLanguage = true
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "perldoc"
+    tabWidth = 4
+
+
+[params]
+subtitle = "食宇宙尘埃·或吐纳着空气和盐水"
+
+# 评论功能
+enableTwikoo = false
+twikooEnvId = "http://twikoo.harushuura.vip/"
+
+enableimgloop = true
+customCSS = ["//assets/scss/custom.scss"]
+
+
+
+
+[[menu.main]]
+url = "/categories/review"
+name = "Review｜随记"
+weight = 3
+[[menu.main]]
+url = "/categories/others"
+name = "Others｜杂记"
+weight = 2
+[[menu.main]]
+url = "/tags"
+name = "Tags｜标签"
+weight = 6
+[[menu.main]]
+url = "/categories/archive"
+name = "Archive｜日记"
+weight = 1
+
+
+

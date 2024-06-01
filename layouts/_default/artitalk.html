@@ -1,0 +1,21 @@
+{{ define "main" }}
+ <!-- 引用 artitalk -->
+ <script type="text/javascript" src="https://unpkg.com/artitalk"></script>
+ <!-- Memos -->
+       <div id="artitalk_main"></div>
+     </div>
+   </div>
+ </main>
+ </div>
+ <script>
+    new Artitalk({
+    appId: "tZacH2n01ljVvbEe6j6NO4hJ-MdYXbMMI", // Your LeanCloud appId
+    appKey: "boOc3nphVgRoP42JtUWLwkfU", // Your LeanCloud appKey
+    pageSize: 15, // 每页说说数量
+    color3: "var(--card-text-color-main)", // 文字颜色
+    color1: "var(--card-background)", //背景颜色1
+    color2: "var(--card-background)" //背景颜色2
+ });
+ </script>
+{{ end }}
+

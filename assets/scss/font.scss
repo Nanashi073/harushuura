@@ -1,0 +1,30 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap");
+
+
+/* merriweather-regular - latin */
+@font-face {
+  font-family: 'Noto Serif SC';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap"),
+     url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+     url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* merriweather-italic - latin */
+@font-face {
+  font-family: 'Noto Serif SC';
+  font-style: italic;
+  font-weight: 400;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap");
+       
+}
+
+body {
+  font-family: 'Noto Serif SC', sans-serif;
+}
+
+code {
+  font-family: 'Noto Serif SC', monospace;
+}

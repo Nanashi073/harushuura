@@ -1,0 +1,27 @@
+
+    <footer>
+        ...
+        <!-- copy code -->
+        {{ if (findRE "<code" .Content 1) }}
+            <script src="{{"/js/clipboard.js" | relURL}}"></script>
+        {{ end }}
+        </footer>
+        
+    <!-- Add blog running time -->
+<section class="running-time">
+    本博客已稳定运行
+    <span id="runningdays" class="running-days"></span>
+    </section>
+    <script>
+        (function() {
+          var current_progress = document.getElementsByClassName("current-progress");
+          var dynamic = document.getElementsByClassName("dynamic");
+           
+           for(let r=dynamic.length-1;r>-1;r--) {
+            dynamic[r].style.width=current_progress[r].innerHTML + "%";
+              dynamic[r].setAttribute("aria-valuenow",current_progress[r].innerHTML);
+              dynamic[r].innerHTML=current_progress[r].innerHTML+ "% Complete";
+           }
+          
+        }());
+    </script>

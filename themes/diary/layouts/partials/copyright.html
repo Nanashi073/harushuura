@@ -1,0 +1,42 @@
+<!-- Please don't remove the information of theme makers. -->
+{{ i18n "hugo_theme" }} <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> {{ i18n "by" }} <a href="https://risehere.net/">Rise</a>
+<br>
+{{ i18n "ported_from" }} <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+<!-- Because this project is under MIT licence. -->
+&copy;
+	{{ if .Site.Copyright }}
+	{{ .Site.Copyright }}
+	{{ else }}
+	{{.Site.Home.Date.Year}} {{.Site.Title}}
+	{{ end }}
+	
+<!-- Add blog running time -->
+<section class="running-time">
+	本博客已稳定运行
+	<span id="runningdays" class="running-days"></span>
+	</section>
+<!-- Add blog running time -->
+<script>
+    let s1 = '2024-03-31'; //website start date
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
+	
+<!-- Add total page and word count time -->
+<section class="totalcount">
+    {{$scratch := newScratch}}
+    {{ range (where .Site.Pages "Kind" "page" )}}
+        {{$scratch.Add "total" .WordCount}}
+    {{ end }}
+    发表了{{ len (where .Site.RegularPages "Section" "post") }}篇文章 · 
+    总计{{ div ($scratch.Get "total") 1000.0 | lang.FormatNumber 2 }}k字
+</section>
